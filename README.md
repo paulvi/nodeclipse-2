@@ -2,12 +2,12 @@
 
 ![nodeclipse-logo](Nodeclipse_logo_light.png)
 
-We have released version 0.3. Enjoy!
+We have released version 0.4. Enjoy!
 
 Moved from [https://github.com/tomotaro1065/nodeclipse](https://github.com/tomotaro1065/nodeclipse)
  to [https://github.com/Nodeclipse/nodeclipse-1](https://github.com/Nodeclipse/nodeclipse-1) .
 
-> [Nodeclipse](http://www.nodeclipse.org/) or [Nodeclipse-1 v0.3](https://github.com/Nodeclipse/nodeclipse-1) is [Eclipse](http://www.eclipse.org/) plugin for the [Node.js](http://www.nodejs.org/). 
+> [Nodeclipse](http://www.nodeclipse.org/) or [Nodeclipse-1 v0.4](https://github.com/Nodeclipse/nodeclipse-1) is [Eclipse](http://www.eclipse.org/) plugin for the [Node.js](http://www.nodejs.org/). 
 The purpose of Nodeclipse is to create environment in 
 which Node.js development is easy for any user from beginner to professional. 
 
@@ -47,30 +47,13 @@ For [Markdown](http://daringfireball.net/projects/markdown/dingus):
 3. (Optional, may be useful because double whitespace is hard line break) 
 	Show whitespace character via Preferences > General > Editors > Text Editors : checkbox labeled "Show whitespace characters"
 
-## What's new (ver 0.3)
-
-- Add support for [JSHint](http://www.jshint.com/) integration for Eclipse, [developed by EclipseSource](https://github.com/eclipsesource/jshint-eclipse)  
-	You had to set project property for JSHint for each project creating. It was boring task.<br/>
-	Nodeclipse 0.3 will set them automatically when generating Node project and Express project.<br/>
-	You should install JSHint integration for Eclipse.<br/>
-	Update site: http://github.eclipsesource.com/jshint-eclipse/updates/
-- Update template for new project
-* Add README.md template
-* Add hello-world-server.js
-* Add package.json (This is good practice)
-* [Publish](http://marketplace.eclipse.org/quickstart) on Eclipse marketplace
-* [t#3 [Feature Request] allow passing arguments](https://github.com/tomotaro1065/nodeclipse/issues/3)
-	You can pass arguments to application and node.js setting on [Debug configration...]-[Node Application]-[&ltyour configration name&gt]-[Arguments].<br/>
-	You can also set arguments on [Run configuration...].<br/>
-	![Screen shot](Arguments.png)
-* [n#2 on x64 windows doesn't find NodeJS dir automatically](https://github.com/Nodeclipse/nodeclipse/issues/2)
-
-### 0.3.1
-
-* [#5 When creating Node project and folder already exists, then add only .project file and don't add 3 files (README.md, hello-world-server.js, package.json)](https://github.com/Nodeclipse/nodeclipse-1/issues/5)
-* [#6 Add Express Project in main menu under File -> New (in Node perspective)](https://github.com/Nodeclipse/nodeclipse-1/issues/6)<br/>
 	If [Node Express Project] menu does not appear under File->New, reset [Node] perspective by right-clicking on the [Node] button, which is located perspective switching area.<br/>
 	![ResetPerspective](ResetPerspective.png)
+
+## What's new 
+
+See Changelong.md  
+and also Changelong.md & History.md at [www.nodeclipse.org repository](https://github.com/Nodeclipse/www.nodeclipse.org).
 
 ## Roadmap
 
@@ -85,19 +68,17 @@ We use [Semantic Versioning](http://semver.org/). Version is MAJOR.MINOR.PATCH, 
 Please participate in discussion and [vote](https://github.com/Nodeclipse/nodeclipse-1/issues/13)
  on features on https://github.com/Nodeclipse/nodeclipse-1/issues
 
-### 0.4 (May 2013)
-
-- Improving Code Assist with convention-based <code>completions.json<code>
-- (Optional) Support for Sublime Text
-* [t#4 [Low priority enhancement] Option to Run project default module (taken from package.json), 
- when righ-clicking project folder](https://github.com/tomotaro1065/nodeclipse/issues/4)
-- Associate *.json files with JS Editor
-- Integrate Markdown Editor, add Markdown HTML preview to Node perspective
-
 ### 0.5 (June-July 2013)
 
-- Kepler 4.3 support
+- #1 [Kepler 4.3](http://www.eclipse.org/downloads/index-developer.php) support
 - Improving Code Assist (new ideas needed)
+- #26 Add CoffeeFileWizard
+- Nodeclipse/www.nodeclipse.org#2 [Task] merge enide solution (hints, roadmap) and nodeclipse-blog into www.nodeclipse.org
+- resource for developers [Nodeclipse.github.io](http://nodeclipse.github.io/)
+* [t#4 [Low priority enhancement] Option to Run project default module (taken from package.json), 
+ when righ-clicking project folder](https://github.com/tomotaro1065/nodeclipse/issues/4)
+- (Optional) Support for Sublime Text
+- Improving Code Assist with convention-based <code>completions.json<code>
 
 ### 0.6 
 
