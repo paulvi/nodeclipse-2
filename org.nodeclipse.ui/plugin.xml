@@ -42,6 +42,17 @@
             Create a new JavaScript source file
          </description>
       </wizard>
+      <wizard
+            category="org.nodeclipse.ui.wizards.category"
+            class="org.nodeclipse.ui.wizards.CoffeeFileWizard"
+            finalPerspective="org.nodeclipse.ui.perspectives.NodePerspective"
+            icon="icons/node.png"
+            id="org.nodeclipse.ui.wizards.CoffeeFileWizard"
+            name="Node CoffeeScript File">
+         <description>
+            Create a new CoffeeScript source file
+         </description>
+      </wizard>
    </extension>
    <extension
          point="org.eclipse.ui.editors">
@@ -171,6 +182,12 @@
             menuGroupId="org.nodeclipse.ui.wizards.category"
             type="new"
             wizardId="org.nodeclipse.ui.wizards.NodeFileWizard">
+         <enablement></enablement>
+      </commonWizard>
+      <commonWizard
+            menuGroupId="org.nodeclipse.ui.wizards.category"
+            type="new"
+            wizardId="org.nodeclipse.ui.wizards.CoffeeFileWizard">
          <enablement></enablement>
       </commonWizard>
    </extension>
