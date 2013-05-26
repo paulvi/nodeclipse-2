@@ -152,7 +152,9 @@ In Eclipse for Java or RCP developers
 ### Code standard
 
 1. If you edited or created file, add yourself as @author in JavaDoc or comments
-2. Import <code>CodeStyle_codetemplates.xml</code>; instructions are inside the xml file.   
+2. Import <code>CodeStyle_codetemplates.xml</code> from
+ <a href="https://github.com/Nodeclipse/Nodeclipse.github.io/blob/master/CodeStyle_codetemplates.xml">Nodeclipse.github.io</a></p> 
+	Instructions are inside the xml file.   
  	This will add @author in new files automatically. Use <kbd>Ctrl+Alt+J</kbd> to quickly insert in existing files. 	  
 
 ### Update forked project
@@ -188,6 +190,7 @@ LambGao 魔都 https://github.com/Nodeclipse (original creator v0.1.8)
 Scott Elcomb https://github.com/psema4  
 Tomoyuki Inagaki https://github.com/tomotaro1065 (debugging integration v0.2) [blog](http://d.hatena.ne.jp/tomotaro1065/)   
 Paul Verest https://github.com/PaulVI/  (Vision, readme, reference to plugings) [blog](https://github.com/PaulVI/blog)   
+Pushkar Gupte https://github.com/pushkar85 (together for 0.4)
 
 ## Contacts
 Do not hesitate to contact developers. 
