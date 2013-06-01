@@ -20,7 +20,7 @@ import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.util.Constants;
 
 /**
- * Using "Run As" --> "npm ..." will lead here.
+ * Using "Run As" --> "npm ..." will lead here from plugin.xml in .ui project.
  **/
 public class LaunchShortcut implements ILaunchShortcut,IGoal {
 
