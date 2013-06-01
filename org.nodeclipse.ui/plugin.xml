@@ -131,6 +131,16 @@
       </runtime>
    </extension>
    <extension
+         id="org.nodeclipse.ui.CoffeeNature"
+         name="Coffee Project Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="org.nodeclipse.ui.nature.CoffeeNature">
+         </run>
+      </runtime>
+   </extension>
+   <extension
          point="org.eclipse.ui.perspectives">
       <perspective
             class="org.nodeclipse.ui.perspectives.NodePerspective"
@@ -264,6 +274,38 @@
                           <test
                                 property= "org.eclipse.debug.ui.matchesPattern"
                                 value= "package.json" >
+                          </test>
+                       </or>
+                      </iterate>
+                 </with>
+              </enablement>
+         </contextualLaunch>
+       </shortcut>
+   </extension>
+   <extension
+         point= "org.eclipse.debug.ui.launchShortcuts" >
+      <shortcut
+            class= "org.nodeclipse.ui.npm.CoffeeLaunchShortcut"
+            icon= "icons/coffee.png"
+            id= "org.nodeclipse.ui.npm.LaunchShortcut"
+            label= "coffee"
+            modes= "run" >
+         <configurationType
+                id= "org.nodeclipse.ui.npm.LaunchConfigurationType" >
+         </configurationType>
+         <contextualLaunch>
+              <enablement>
+                 <with
+                       variable= "selection" >
+                    <count
+                          value= "1" >
+                    </count>
+                    <iterate>
+                       <or>
+                          <instanceof value="org.eclipse.core.resources.IFile"/>
+                          <test
+                                property= "org.eclipse.debug.ui.matchesPattern"
+                                value= ".coffee" >
                           </test>
                        </or>
                       </iterate>
