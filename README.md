@@ -4,6 +4,41 @@
 
 We have released version 0.4. Enjoy!
 
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Nodeclipse - Node.js support in Eclipse IDE](#nodeclipse---nodejs-support-in-eclipse-ide)
+	- [Vision](#vision)
+	- [Features](#features)
+	- [Installing](#installing)
+	- [Usage](#usage)
+	- [What's new](#whats-new)
+	- [Roadmap](#roadmap)
+		- [0.5 (June-July 2013)](#05-june-july-2013)
+		- [0.6](#06)
+		- [1.0](#10)
+		- [Next](#next)
+		- [Ideas, proposals, work-in-progress etc.](#ideas-proposals-work-in-progress-etc)
+		- [Shelved](#shelved)
+	- [Developing](#developing)
+		- [First tiny steps](#first-tiny-steps)
+		- [Before starting development, please do](#before-starting-development-please-do)
+		- [Preparing environment](#preparing-environment)
+			- [Recommended way](#recommended-way)
+				- [Other way, not recommended way](#other-way-not-recommended-way)
+		- [Code standard](#code-standard)
+		- [Update forked project](#update-forked-project)
+		- [Send Pull Request steps](#send-pull-request-steps)
+		- [Testing](#testing)
+	- [Contributors](#contributors)
+	- [Contacts](#contacts)
+	- [For Bloggers and Users of Twitter, Flickr, LinkedIn, Weibo etc.](#for-bloggers-and-users-of-twitter-flickr-linkedin-weibo-etc)
+	- [Spread the words](#spread-the-words)
+		- [Hot requests](#hot-requests)
+		- [Interesting and useful Links](#interesting-and-useful-links)
+			- [Other Node IDEs](#other-node-ides)
+			- [Other Eclipse-based IDEs](#other-eclipse-based-ides)
+			- [Hints & Notes](#hints--notes)
+
 Moved from [https://github.com/tomotaro1065/nodeclipse](https://github.com/tomotaro1065/nodeclipse)
  to [https://github.com/Nodeclipse/nodeclipse-1](https://github.com/Nodeclipse/nodeclipse-1) .
 
