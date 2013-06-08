@@ -183,8 +183,8 @@ In Eclipse for Java or RCP developers
 
 ### How to build it
 
-It will start to build automatically when you import it into your Eclipse workspase and whenever you save code changed.
-If you got build error, probubly you don't have installed JSDT yet.  Try as fllows.
+It will be started building automatically when you import it into your workspase and whenever you save code which is changed.
+If you got build error, probubly you don't have installed JSDT yet.  Try as follows.
 
 1. Select [Help]-[Install New Software...].
 2. Select [Juno - http://download.eclipse.org/releases/juno] in [Work with] dropdown list.
