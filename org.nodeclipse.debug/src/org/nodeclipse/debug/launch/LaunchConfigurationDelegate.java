@@ -48,10 +48,26 @@ public class LaunchConfigurationDelegate implements
 		if(nodeProcess != null && !nodeProcess.isTerminated()) {
 			throw new CoreException(new Status(IStatus.OK, ChromiumDebugPlugin.PLUGIN_ID, null, null));
 		}
-		
-		// Using configuration to build command line
-		
-		String nodePath = Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.NODE_PATH);
+
+		String file = 
+				configuration.getAttribute(Constants.KEY_FILE_PATH,	Constants.BLANK_STRING);
+		String extension = null;
+		int i = file.lastIndexOf('.');
+		if(i > 0) {
+			extension = file.substring(i+1);
+		} else {
+			throw new CoreException(new Status(IStatus.OK, ChromiumDebugPlugin.PLUGIN_ID, "Target file does not have extension: " + file, null));
+		}
+
+		// Using configuration to build command line		
+		String nodePath;
+		if("js".equals(extension)) {
+			nodePath = Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.NODE_PATH);
+		} else if("coffee".equals(extension)) {
+			nodePath = Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.COFFEE_PATH);
+		} else {
+			throw new CoreException(new Status(IStatus.OK, ChromiumDebugPlugin.PLUGIN_ID, extension + " is not supported.", null));			
+		}
 		
 		// Check if the node location is correctly configured
 		File nodeFile = new File(nodePath);
@@ -76,8 +92,6 @@ public class LaunchConfigurationDelegate implements
 			}
 		}
 		
-		String file = 
-				configuration.getAttribute(Constants.KEY_FILE_PATH,	Constants.BLANK_STRING);
 		String filePath = 
 				ResourcesPlugin.getWorkspace().getRoot().findMember(file).getLocation().toOSString();
 		// path is relative, so can not found it.

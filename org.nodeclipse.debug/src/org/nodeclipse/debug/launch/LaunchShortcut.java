@@ -19,7 +19,7 @@ import org.eclipse.ui.IFileEditorInput;
 import org.nodeclipse.debug.util.Constants;
 
 /**
- * Using "Run As" --> "Node Application" will lead here from plugin.xml in .ui project.
+ * Using "Run As" --> "Node Application" or "Run As" --> "coffee" will lead here
  **/
 public class LaunchShortcut implements ILaunchShortcut {
 

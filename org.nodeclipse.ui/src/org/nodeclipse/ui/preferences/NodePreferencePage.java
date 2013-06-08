@@ -14,7 +14,8 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
 
     private FileFieldEditor fileFieldEditor;
     private FileFieldEditor expressPath;
-    private FileFieldEditor completionsPath;
+    private FileFieldEditor coffeePath;
+    //private FileFieldEditor completionsPath;
     
     public NodePreferencePage() {
         super(GRID);
@@ -35,8 +36,11 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
         expressPath = new FileFieldEditor(PreferenceConstants.EXPRESS_PATH, "Express Path:", getFieldEditorParent());
         addField(expressPath);
 
-        completionsPath = new FileFieldEditor(PreferenceConstants.COMPLETIONS_JSON_PATH, "Completions.json Path:", getFieldEditorParent());
-        addField(completionsPath);
+        coffeePath = new FileFieldEditor(PreferenceConstants.COFFEE_PATH, "Coffee Path:", getFieldEditorParent());
+        addField(coffeePath);
+        
+//        completionsPath = new FileFieldEditor(PreferenceConstants.COMPLETIONS_JSON_PATH, "Completions.json Path:", getFieldEditorParent());
+//        addField(completionsPath);
     }
 
     @Override

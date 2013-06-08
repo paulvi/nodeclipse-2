@@ -26,8 +26,9 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 		String path = "/usr/local/bin/node";
-//		String express_path = "/usr/local/bin/express";
 		String express_path = "/usr/local/lib/node_modules/express/bin/express";
+		String coffee_path = "/usr/local/bin/coffee";
+		
 		File file;
 		if (OSUtils.isWindows()) {
 			path = "C:/Program Files/nodejs/node.exe".replace('/', File.separatorChar);
@@ -35,10 +36,10 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 			if (!file.exists()) {
 				path = "C:/Program Files (x86)/nodejs/node.exe".replace('/', File.separatorChar);
 			}
-//			express_path = System.getProperty("user.home") 
-//					+ "/AppData/Roaming/npm/express.cmd".replace('/', File.separatorChar);
 			express_path = System.getProperty("user.home") 
 					+ "/AppData/Roaming/npm/node_modules/express/bin/express".replace('/', File.separatorChar);
+			coffee_path = System.getProperty("user.home") 
+					+ "/AppData/Roaming/npm/coffee.cmd".replace('/', File.separatorChar);
 		}
 		if (OSUtils.isMacOS()) {
 			file = new File(path);
@@ -47,8 +48,11 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 			}
 			file = new File(express_path);
 			if (!file.exists()) {
-//				express_path = "/opt/local/bin/express";
 				express_path = "/opt/local/lib/node_modules/express/bin/express";
+			}
+			file = new File(coffee_path);
+			if (!file.exists()) {
+				coffee_path = "/opt/local/bin/coffee";
 			}
 		}
 		file = new File(path);
@@ -60,6 +64,10 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 			store.setDefault(PreferenceConstants.EXPRESS_PATH, express_path);
 			store.setDefault(PreferenceConstants.EXPRESS_VERSION,
 					getExpressVersion(express_path));
+		}
+		file = new File(coffee_path);
+		if (file.exists()) {
+			store.setDefault(PreferenceConstants.COFFEE_PATH, coffee_path);
 		}
 	}
 
