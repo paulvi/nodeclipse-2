@@ -4,11 +4,15 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.runtime.FileLocator;
 import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.preferences.PreferenceConstants;
+import org.osgi.framework.Bundle;
 
 /**
  * @author ?
@@ -63,6 +67,47 @@ public class ProcessUtils {
 		ver = ver.substring(0, idx);
 		int ret = Integer.parseInt(ver);
 		return ret;
+	}
+	
+	public static String getBundledExpressPath() {
+		return getBundledPath("node_modules/express/bin/express");
+	}
+	
+	public static String getBundledCoffeePath() {
+		return getBundledPath("node_modules/coffee-script/bin/coffee");
+	}
+	
+	public static String getBundledPath(String path) {
+		Bundle bundle = Activator.getDefault().getBundle();
+		if (bundle == null) {
+			LogUtil.info("getBundlePath(" + path + " bundle is null");
+			return "";
+		}
+		try {
+			URL location = FileLocator.toFileURL(bundle.getEntry("/"));
+			File file = new File(location.getPath(), path);
+			LogUtil.info("BundledPath: " + file.getAbsolutePath());
+			
+			return file.getAbsolutePath();
+		} catch(Exception ex) {
+			LogUtil.error(ex);
+			return "";
+		}
+	}
+	public static boolean npmInstall(String name) {
+		List<String> cmdLine = new ArrayList<String>();
+		cmdLine.add("sudo");
+		cmdLine.add(getNpmPath());
+		cmdLine.add("install");
+		cmdLine.add("-g");
+		cmdLine.add(name);
+		try {
+			exec(cmdLine, null);
+		} catch(InvocationTargetException ex) {
+			ex.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 	
 	public static String exec(List<String> cmdLine, File dir)

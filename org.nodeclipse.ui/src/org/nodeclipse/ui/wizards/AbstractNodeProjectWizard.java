@@ -38,6 +38,8 @@ import org.eclipse.wst.jsdt.core.JavaScriptCore;
 import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.nature.NodeNature;
 import org.nodeclipse.ui.perspectives.NodePerspective;
+import org.nodeclipse.ui.util.LogUtil;
+import org.nodeclipse.ui.util.ProcessUtils;
 import org.osgi.framework.Bundle;
 
 @SuppressWarnings("restriction")
@@ -101,9 +103,12 @@ public abstract class AbstractNodeProjectWizard extends Wizard implements INewWi
 			throw new CoreException(new Status(IStatus.ERROR,
 					Activator.PLUGIN_ID, "bundle not found"));
 		}
+				
 		try {
 			URL location = FileLocator.toFileURL(bundle.getEntry("/"));
 			File templateRoot = new File(location.getPath(), path);
+			LogUtil.info("templateRoot: " + templateRoot.getAbsolutePath());
+			
 			RelativityFileSystemStructureProvider structureProvider = new RelativityFileSystemStructureProvider(
 					templateRoot);
 			ImportOperation operation = new ImportOperation(

@@ -64,10 +64,24 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 			store.setDefault(PreferenceConstants.EXPRESS_PATH, express_path);
 			store.setDefault(PreferenceConstants.EXPRESS_VERSION,
 					getExpressVersion(express_path));
+		} else {
+			express_path = ProcessUtils.getBundledExpressPath();
+			file = new File(express_path);
+			if (file.exists()) {
+				store.setDefault(PreferenceConstants.EXPRESS_PATH, express_path);
+				store.setDefault(PreferenceConstants.EXPRESS_VERSION,
+						getExpressVersion(express_path));
+			}
 		}
 		file = new File(coffee_path);
 		if (file.exists()) {
 			store.setDefault(PreferenceConstants.COFFEE_PATH, coffee_path);
+		} else {
+			coffee_path = ProcessUtils.getBundledCoffeePath();
+			file = new File(coffee_path);
+			if (file.exists()) {
+				store.setDefault(PreferenceConstants.COFFEE_PATH, coffee_path);
+			}
 		}
 	}
 
