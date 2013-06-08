@@ -39,7 +39,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 			express_path = System.getProperty("user.home") 
 					+ "/AppData/Roaming/npm/node_modules/express/bin/express".replace('/', File.separatorChar);
 			coffee_path = System.getProperty("user.home") 
-					+ "/AppData/Roaming/npm/coffee.cmd".replace('/', File.separatorChar);
+					+ "/AppData/Roaming/npm/node_modules/coffee-script/bin/coffee".replace('/', File.separatorChar);
 		}
 		if (OSUtils.isMacOS()) {
 			file = new File(path);
@@ -52,7 +52,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 			}
 			file = new File(coffee_path);
 			if (!file.exists()) {
-				coffee_path = "/opt/local/bin/coffee";
+				coffee_path = "/opt/local/lib/node_modules/coffee-script/bin/coffee";
 			}
 		}
 		file = new File(path);

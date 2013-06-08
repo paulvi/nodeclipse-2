@@ -49,26 +49,9 @@ public class LaunchConfigurationDelegate implements
 			throw new CoreException(new Status(IStatus.OK, ChromiumDebugPlugin.PLUGIN_ID, null, null));
 		}
 
-		String file = 
-				configuration.getAttribute(Constants.KEY_FILE_PATH,	Constants.BLANK_STRING);
-		String extension = null;
-		int i = file.lastIndexOf('.');
-		if(i > 0) {
-			extension = file.substring(i+1);
-		} else {
-			throw new CoreException(new Status(IStatus.OK, ChromiumDebugPlugin.PLUGIN_ID, "Target file does not have extension: " + file, null));
-		}
-
 		// Using configuration to build command line		
-		String nodePath;
-		if("js".equals(extension)) {
-			nodePath = Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.NODE_PATH);
-		} else if("coffee".equals(extension)) {
-			nodePath = Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.COFFEE_PATH);
-		} else {
-			throw new CoreException(new Status(IStatus.OK, ChromiumDebugPlugin.PLUGIN_ID, extension + " is not supported.", null));			
-		}
-		
+		String nodePath= Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.NODE_PATH);
+
 		// Check if the node location is correctly configured
 		File nodeFile = new File(nodePath);
 		if(!nodeFile.exists()){
@@ -90,6 +73,19 @@ public class LaunchConfigurationDelegate implements
 			for(String s : sa) {
 				cmdLine.add(s);
 			}
+		}
+		
+		String file = 
+				configuration.getAttribute(Constants.KEY_FILE_PATH,	Constants.BLANK_STRING);
+		String extension = null;
+		int i = file.lastIndexOf('.');
+		if(i > 0) {
+			extension = file.substring(i+1);
+		} else {
+			throw new CoreException(new Status(IStatus.OK, ChromiumDebugPlugin.PLUGIN_ID, "Target file does not have extension: " + file, null));
+		}
+		if("coffee".equals(extension)) {
+			cmdLine.add(Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.COFFEE_PATH));
 		}
 		
 		String filePath = 
