@@ -184,17 +184,17 @@ In Eclipse for Java or RCP developers
 
 ### How to build it
 
-It will be started building automatically when you import it into your workspase and whenever you save code which is changed.
-If you got build error, probubly you don't have installed JSDT yet.  Try as follows.
+It will be started building automatically when you import it into your workspace and whenever you save code which is changed.
+If you got build error, probably you don't have installed JSDT yet.  Try as follows.
 
 1. Select [Help]-[Install New Software...].
-2. Select [Juno - http://download.eclipse.org/releases/juno] in [Work with] dropdown list.
+2. Select [Juno - http://download.eclipse.org/releases/juno] in [Work with] drop-down list.
 3. Check [Web, XML, Java EE and OSGi Enterprise Development]-[JavaScript Development Tools].
 
 ### How to Run or Debug it
 
-1. Select project folder, for instance org.nodeclipse.ui, on Package Exploer.
-2. Open context menu by rigth-clicking.
+1. Select project folder, for instance org.nodeclipse.ui, on Package Explorer.
+2. Open context menu by right-clicking.
 3. Select [Run As / Debug As]-[Eclipse Application].
 ![RunOrDebug](RunOrDebug.png)
 
