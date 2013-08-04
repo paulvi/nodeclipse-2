@@ -2,7 +2,9 @@ package org.nodeclipse.debug.launch;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.chromium.debug.core.ChromiumDebugPlugin;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -114,10 +116,19 @@ public class LaunchConfigurationDelegate implements
 			}
 		}
 		
+		Map<String, String> envm = new HashMap<String, String>();
+		envm = configuration.getAttribute(Constants.ATTR_ENVIRONMENT_VARIABLES, envm);
+		String[] envp = new String[envm.size()];
+		int idx = 0;
+		for(String key : envm.keySet()) {
+			String value = envm.get(key);
+			envp[idx++] = key + "=" + value;
+		}
+		
 		String[] cmds = {};
 		cmds = cmdLine.toArray(cmds);
 		// Launch a process to debug.eg,
-		Process p = DebugPlugin.exec(cmds, workingPath);
+		Process p = DebugPlugin.exec(cmds, workingPath, envp);
 		RuntimeProcess process = (RuntimeProcess)DebugPlugin.newProcess(launch, p, Constants.PROCESS_MESSAGE);
 		if (mode.equals(ILaunchManager.DEBUG_MODE)) {
 			if(!process.isTerminated()) { 
