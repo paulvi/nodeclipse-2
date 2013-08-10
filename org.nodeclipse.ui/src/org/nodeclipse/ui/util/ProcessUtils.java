@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -70,11 +71,30 @@ public class ProcessUtils {
 	}
 	
 	public static String getBundledExpressPath() {
-		return getBundledPath("node_modules/express/bin/express");
+		try {
+			Class clazz = Class.forName("org.nodeclipse.bundle.express.BundlePath");
+			Method m = clazz.getMethod("getPath");
+			String path = (String)m.invoke(clazz, null);
+			return path;
+		} catch (ReflectiveOperationException e) {
+		}
+		return "";
+//		return getBundledPath("node_modules/express/bin/express");
 	}
 	
+	
+	
+	
 	public static String getBundledCoffeePath() {
-		return getBundledPath("node_modules/coffee-script/bin/coffee");
+		try {
+			Class clazz = Class.forName("org.nodeclipse.bundle.coffee_script.BundlePath");
+			Method m = clazz.getMethod("getPath");
+			String path = (String)m.invoke(clazz, null);
+			return path;
+		} catch (ReflectiveOperationException e) {
+		}
+		return "";
+//		return getBundledPath("node_modules/coffee-script/bin/coffee");
 	}
 	
 	public static String getBundledPath(String path) {
