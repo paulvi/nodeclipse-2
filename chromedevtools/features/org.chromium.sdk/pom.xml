@@ -11,8 +11,8 @@
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
 
-	<artifactId>org.chromium.debug.ui</artifactId>	
-	<packaging>eclipse-plugin</packaging>
+	<artifactId>org.chromium.sdk.feature</artifactId>	
+	<packaging>eclipse-feature</packaging>
 
 </project>
 

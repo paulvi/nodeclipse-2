@@ -5,14 +5,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.chromium.chromedevtools</groupId>
-		<artifactId>org.chromium.parent</artifactId>
-		<version>0.3.9-SNAPSHOT</version>
-		<relativePath>../../pom.xml</relativePath>
+		<groupId>org.nodeclipse.nodeclipse-1</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.5.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>org.chromium.debug.ui</artifactId>	
-	<packaging>eclipse-plugin</packaging>
+	<artifactId>org.nodeclipse.bundle.coffee_script.feature</artifactId>
+	<packaging>eclipse-feature</packaging>
 
 </project>
 

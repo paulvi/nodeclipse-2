@@ -17,10 +17,17 @@
 
 	<modules>
 		<module>org.nodeclipse.ui</module>
+
 		<module>chromedevtools</module>
-		<module>chromedevtools/plugins/org.chromium.debug.ui</module>
+
 		<module>org.nodeclipse.debug</module>
 		<module>org.nodeclipse.feature</module>
+		
+		<module>org.nodeclipse.bundle.coffee-script</module>
+		<module>org.nodeclipse.bundle.coffee_script.feature</module>
+		<module>org.nodeclipse.bundle.express</module>
+		<module>org.nodeclipse.bundle.express.feature</module>
+		
 		<module>org.nodeclipse.site</module>
 	</modules>
 
