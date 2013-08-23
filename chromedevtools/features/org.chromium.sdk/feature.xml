@@ -5,7 +5,7 @@
   found in the LICENSE file.
 -->
 <feature
-      id="org.chromium.sdk"
+      id="org.chromium.sdk.feature"
       label="%featureName"
       version="0.3.9.qualifier"
       provider-name="%providerName">
