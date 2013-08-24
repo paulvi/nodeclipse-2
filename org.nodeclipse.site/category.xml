@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
+   <category-def name="Nodeclipse" label="Nodeclipse">
+      <description>
+         Nodeclipse core, Chromium tools
+      </description>
+   </category-def>
+   <category-def name="coffeescript-eclipse" label="coffeescript-eclipse">
+      <description>
+         General CoffeeScript Editor
+      </description>
+   </category-def>
+   <category-def name="npm-bundle" label="Node package module bundle">
+      <description>
+         If you have already installed these Node.js packages using npm, you don&apos;t need install these plug-ins.
+      </description>
+   </category-def>
+   <category-def name="Tools" label="Tools">   
+      <description>
+         Markdown Editor, JSHInt integration
+      </description>
+   </category-def>
+
    <!-- 
    <feature url="features/markdown.editor.feature_0.2.3.jar" id="markdown.editor.feature" version="0.2.3">
       <category name="Tools"/>
@@ -12,10 +33,10 @@
    </feature>
     -->
 
-   <feature url="features/org.chromium.debug.feature_0.3.9.qualifier.jar" id="org.chromium.debug.feature" version="0.3.9.qualifier">
+   <feature url="features/org.chromium.debug_0.3.9.qualifier.jar" id="org.chromium.debug" version="0.3.9.qualifier">
       <category name="Nodeclipse"/>
    </feature>
-   <feature url="features/org.chromium.sdk.feature_0.3.9.qualifier.jar" id="org.chromium.sdk.feature" version="0.3.9.qualifier">
+   <feature url="features/org.chromium.sdk_0.3.9.qualifier.jar" id="org.chromium.sdk" version="0.3.9.qualifier">
       <category name="Nodeclipse"/>
    </feature>
    <feature url="features/org.nodeclipse_0.5.0.qualifier.jar" id="org.nodeclipse" version="0.5.0.qualifier">
@@ -27,12 +48,4 @@
    <feature url="features/org.nodeclipse.bundle.express.feature_3.2.5.qualifier.jar" id="org.nodeclipse.bundle.express.feature" version="3.2.5.qualifier">
       <category name="npm-bundle"/>
    </feature>
-   <category-def name="Nodeclipse" label="Nodeclipse"/>
-   <category-def name="coffeescript-eclipse" label="coffeescript-eclipse"/>
-   <category-def name="npm-bundle" label="Node package module bundle">
-      <description>
-         If you have already installed these Node.js packages using npm, you don&apos;t need install these plug-ins.
-      </description>
-   </category-def>
-   <category-def name="Tools" label="Tools"/>   
 </site>
